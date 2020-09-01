@@ -3,10 +3,7 @@ name: tflint
 on:
   push:
     branches:
-      - main
       - master
-      - prod
-      - develop
 
 jobs:
   tflint:
@@ -16,7 +13,7 @@ jobs:
       - name: setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-          terraform_version: 0.12.26
+          terraform_version: 0.13.1
       - name: Terraform init
         run: terraform init --backend=false
       - name: tflint
