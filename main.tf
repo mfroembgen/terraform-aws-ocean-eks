@@ -21,7 +21,7 @@ locals {
 
 resource "aws_security_group" "all_worker_mgmt" {
   name        = "${var.cluster_name}_all_worker_management"
-  description = "Managment security group for all workers from ${local.cluster_name}"
+  description = "Management security group for all workers from ${local.cluster_name}"
   vpc_id      = var.create_vpc == true ? module.vpc.vpc_id : var.vpc_id
 
   ingress {

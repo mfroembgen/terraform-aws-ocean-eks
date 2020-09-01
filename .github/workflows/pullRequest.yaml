@@ -20,9 +20,8 @@ jobs:
           AWS_DEFAULT_REGION: eu-central-1
           # many of these are covered by better reviewdog linters below
           SKIP: >-
-            terraform_tflint_deep,
+            terraform_tflint,
             no-commit-to-branch,
-            terraform_tflint_nocreds,
             terraform_tfsec
       - uses: stefanzweifel/git-auto-commit-action@v4
         if: ${{ failure() }}
