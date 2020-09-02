@@ -1,5 +1,5 @@
 ---
-name: Release
+name: release
 
 on:
   push:
@@ -7,19 +7,12 @@ on:
       - master
 
 jobs:
-  release:
-    name: Release
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - name: Install dependencies
-        run: npm ci
-      - name: Release
+      - name: Semantic Releaser
+        uses: jossef/action-semantic-releaser@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release
