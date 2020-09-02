@@ -7,6 +7,10 @@ rule "terraform_deprecated_interpolation" {
   enabled = true
 }
 
+rule "terraform_deprecated_index" {
+  enabled = true
+}
+
 rule "terraform_unused_declarations" {
   enabled = true
 }
@@ -33,13 +37,13 @@ rule "terraform_module_pinned_source" {
 
 rule "terraform_naming_convention" {
   enabled = true
-  format  = "snake_case"
+  format  = "mixed_snake_case"
 }
 
 rule "terraform_required_version" {
   enabled = true
 }
 
-rule "terraform_required_providers" {
+rule "terraform_standard_module_structure" {
   enabled = true
 }
